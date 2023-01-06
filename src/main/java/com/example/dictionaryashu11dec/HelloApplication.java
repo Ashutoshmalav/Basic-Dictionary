@@ -25,7 +25,7 @@ public class HelloApplication extends Application {
     ListView<String > suggestionList;
     Pane createContent(){
         Pane root= new Pane();
-        root.setPrefSize(400,600);
+        root.setPrefSize(400,250);
 
         wordTextField = new TextField();
         wordTextField.setTranslateX(20);
@@ -49,9 +49,9 @@ public class HelloApplication extends Application {
 
                 }
                 else{
-                    String  meaning = dictionaryUsingHashMap.getMeaning(word);
-                    meaningLabel.setText(meaning);
-                    meaningLabel.setTextFill(Color.BLACK);
+                    String  meaning = dictionaryUsingHashMap.getMeaning( word);
+                    meaningLabel.setText("Meaning : " +meaning);
+                    meaningLabel.setTextFill(Color.BLUE);
                 }
             }
         });
@@ -65,7 +65,7 @@ public class HelloApplication extends Application {
 //        });
 
 
-        meaningLabel = new Label("I am meaning ");
+        meaningLabel = new Label("");
         meaningLabel.setTranslateX(20);
         meaningLabel.setTranslateY(60);
 
@@ -75,7 +75,7 @@ public class HelloApplication extends Application {
         suggestionList.setMinSize(300,40);
         suggestionList.setMaxSize(350,50);
 
-        String[] wordList= {"Angad" ,"Vivek","Rahul", "shubh","Ashu", "Jack"};
+        String[] wordList= {"Phase" ,"project","start", "shubh","Depreciating assets"};
         suggestionList.getItems().addAll(wordList);
         suggestionList.setOrientation(Orientation.HORIZONTAL);
          suggestionList.setOnMouseClicked(new EventHandler<MouseEvent>() {
