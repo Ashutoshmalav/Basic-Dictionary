@@ -1,5 +1,7 @@
 package com.example.dictionaryashu11dec;
 import java.util.HashMap;
+import java.util.Locale;
+
 public class DictionaryUsingHashMap {
     private HashMap<String,String> dictionary;
 
@@ -20,8 +22,8 @@ public class DictionaryUsingHashMap {
         return true;
     }
     public String getMeaning(String word){
-        if(dictionary.containsKey(word)){
-            return dictionary.get(word);
+        if(dictionary.containsKey(word.toLowerCase())){
+            return dictionary.get(word.toLowerCase());
         }
         else{
             return "Word does not exist in Dictionary";
